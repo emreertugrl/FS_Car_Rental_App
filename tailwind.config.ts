@@ -8,9 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        circle: "url('/bg-1.png')",
+        triangle: "url('/bg-2.png')",
+      },
+
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "light-gray": "#F6F7F9",
+        "basic-blue": "#3563E9",
       },
     },
   },
