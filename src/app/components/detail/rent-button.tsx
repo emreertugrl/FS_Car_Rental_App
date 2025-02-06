@@ -1,15 +1,17 @@
 "use client";
 
 import { ICar } from "@/app/api/models/Car";
+import { getPaymentUrl } from "@/app/utils/service";
 import { FC } from "react";
 
 type Props = {
   car: ICar;
 };
 
-const RentButton: FC<Props> = () => {
-  // TODO KİRALAMA İÇİN İSTEK AT
-  const handleRent = () => {};
+const RentButton: FC<Props> = ({ car }) => {
+  const handleRent = async () => {
+    await getPaymentUrl(car).then((url) => (window.location.href = url));
+  };
 
   return (
     <button
